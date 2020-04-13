@@ -12,7 +12,7 @@ describe('freaction function', () => {
   })
 
   it('should create a fraction from 1 and -2', () => {
-    const result = fraction(-1, 2)
+    const result = fraction(1, -2)
     expect(result).toEqual(['-', 1, 2])
   })
 
