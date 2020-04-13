@@ -1,4 +1,4 @@
-const { range } = require('../index')
+const { range } = require('../../point')
 
 describe('range', () => {
   it('should generate a range from 0 to 5', () => {
@@ -13,7 +13,7 @@ describe('range', () => {
 
   it('should throw an error if start is bigger than end', () => {
     try {
-      const result = range(1, -1)
+      range(1, -1)
       throw new Error('this test is broken')
     } catch(err) {
       expect(err.message).toEqual('Illegal Argument: start should be smaller than end of range')

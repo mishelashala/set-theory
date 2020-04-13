@@ -1,4 +1,4 @@
-const { intersection } = require('../index')
+const { intersection } = require('../../set')
 
 describe('intersection', () => {
   it('should find the intersection of A and B given two non-empty arrays', () => {

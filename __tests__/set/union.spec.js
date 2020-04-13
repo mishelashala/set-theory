@@ -1,5 +1,4 @@
-const { union } = require('../index')
-
+const { union } = require('../../set')
 
 describe('union', () => {
   it('should find the union of A and B given non-empty arrays', () => {
