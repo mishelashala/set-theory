@@ -11,6 +11,10 @@ function absolute(num) {
  * Returns the result of elevating the base to a certain exponent
  */
 function exponential(base, exponent) {
+  if (base === 0 && exponent === 0) {
+    throw new Error('Illegal Argument: base and exponent cannot be both 0')
+  }
+
   if (exponent === 0) {
     return 1
   }
