@@ -35,6 +35,26 @@ function applyOperator(operator, operandA, operandB) {
 }
 
 /**
+ * Groups multi-digit numbers from a list of characters
+ */
+function groupNumbers(stack, currentChar) {
+  if (Number.isInteger(parseInt(currentChar, 10))) {
+    const previousChar = stack.length ? stack[stack.length - 1] : undefined
+    let value =
+      previousChar && Number.isInteger(parseInt(previousChar, 10))
+        ? `${currentChar}${previousChar}`
+        : currentChar
+
+    let index = stack.length ? stack.length - 1 : 0
+    stack[index] = value
+  } else {
+    stack.push(currentChar)
+  }
+
+  return stack
+}
+
+/**
  * Returns the evaluation of an expression on prefix notation
  */
 function prefixNotation(str = '') {
@@ -43,6 +63,7 @@ function prefixNotation(str = '') {
   str
     .split('')
     .reverse()
+    .reduce(groupNumbers, [])
     .forEach((char) => {
       if (char === ' ') {
         return
