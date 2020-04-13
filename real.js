@@ -33,6 +33,17 @@ function fraction(numerator, denominator) {
 }
 
 /**
+ * Returns the fraction symbol based on two symbols
+ */
+function getSymbol(symbolA, symbolB) {
+  if (symbolA !== symbolB) {
+    return '-'
+  }
+
+  return '+'
+}
+
+/**
  * Returns the sum of two fractions
  */
 function sumFractions(a, b) {
@@ -58,17 +69,6 @@ function sumFractions(a, b) {
     return fractionA[1] + fractionB[1]
   }
 
-  /**
-   * Returns the fraction symbol based on two symbols
-   */
-  function getSymbol(symbolA, symbolB) {
-    if (symbolA !== symbolB) {
-      return '-'
-    }
-
-    return '+'
-  }
-
   const numerator = getNumerator(a, b)
   const denominator = getDenominator(a[2], b[2])
   const symbol = getSymbol(a[0], b[0])
@@ -76,7 +76,19 @@ function sumFractions(a, b) {
   return [symbol, numerator, denominator]
 }
 
+/**
+ * Returns the multiplication of two fractions
+ */
+function multiplyFractions(fractionA, fractionB) {
+  const numerator = fractionA[1] * fractionB[1]
+  const denominator = fractionA[2] * fractionB[2]
+  const symbol = getSymbol(fractionA[0], fractionB[0])
+
+  return [symbol, numerator, denominator]
+}
+
 module.exports = {
   fraction,
-  sumFractions
+  sumFractions,
+  multiplyFractions
 }
