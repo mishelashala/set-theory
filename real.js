@@ -1,4 +1,10 @@
-const { absolute } = require('./number')
+/**
+ * Returns the absolute value of a number
+ * @HACK: circular dependency breaks tests
+ */
+function absolute(num) {
+  return num < 0 ? -num : num
+}
 
 /**
  * Creates a representation of a fraction based on two numbers
