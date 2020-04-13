@@ -87,8 +87,20 @@ function multiplyFractions(fractionA, fractionB) {
   return [symbol, numerator, denominator]
 }
 
+/**
+ * Returns the divition of two fractions
+ */
+function divideFractions(fractionA, fractionB) {
+  const numerator = fractionA[1] * fractionB[2]
+  const denominator = fractionA[2] * fractionB[1]
+  const symbol = getSymbol(fractionA[0], fractionB[0])
+
+  return [symbol, numerator, denominator]
+}
+
 module.exports = {
   fraction,
   sumFractions,
-  multiplyFractions
+  multiplyFractions,
+  divideFractions
 }
